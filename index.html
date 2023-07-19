@@ -90,7 +90,7 @@
       window.addEventListener(
         "DOMContentLoaded",
         function () {
-          var page = document.getElementById("page"),
+          var page = document.getElementById("portrait"),
             nav = window.navigator,
             ua = nav.userAgent,
             isFullScreen = nav.standalone;
@@ -190,7 +190,7 @@
         updateBannerVisibility();
       }
       try {
-        var buildUrl = "WebGLTesting/tree/main/Build";
+        var buildUrl = "tree/main/Build";
         var loaderUrl = buildUrl + "/buildv1.loader.js";
         // var loaderUrl =
         //   "https://kr-game-bundles.s3.ap-southeast-1.amazonaws.com/oob/ServerData/StandaloneWindows64/Build/buildv1.loader.js";
