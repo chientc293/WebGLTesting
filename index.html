@@ -3,16 +3,48 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- home screen app  Full screen  -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <link rel="apple-touch-icon" href="/custom-icon.png" />
-    <link rel="apple-touch-startup-image" href="/startup.png" />
-
+    <!--  The status bar  -->
+    <!--  There is also a need to set different sizes of the startup diagram, default will not be set to automatically find the root directory apple-touch-icon-precomposed.png -->
+    <!-- home screen app iPhone icon -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="57x57"
+      href="startup/apple-touch-icon-57x57-precomposed.png"
+    />
+    <!-- home screen app iPad icon -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="startup/apple-touch-icon-72x72-precomposed.png"
+    />
+    <!-- home screen app iPhone Retinas icon -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="startup/apple-touch-icon-114x114-precomposed.png"
+    />
+    <!-- home screen app iPad Retinas icon -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="startup/apple-touch-icon-144x144-precomposed.png"
+    />
+    <!-- iPhone5 Start the figure  -->
+    <link
+      rel="apple-touch-startup-image"
+      href="startup/startup5.png"
+      media="(device-height:568px)"
+    />
+    <!-- iPhone4 Start the figure  -->
+    <link
+      rel="apple-touch-startup-image"
+      size="640x920"
+      href="startup/startup.png"
+      media="(device-height:480px)"
+    />
     <title>Meta Poker</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico" />
     <link rel="stylesheet" href="TemplateData/style.css" />
@@ -22,6 +54,16 @@
         background-color: #5d6573;
       }
     </style>
+    <script
+      src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+      integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
     <script
       defer
       src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"
@@ -38,19 +80,26 @@
 
     <script defer src="./init-firebase.js"></script>
     <script>
-      window.top.scrollTo(0, 1);
-      alert("ok");
+      window.addEventListener(
+        "DOMContentLoaded",
+        function () {
+          var page = document.getElementById("page"),
+            nav = window.navigator,
+            ua = nav.userAgent,
+            isFullScreen = nav.standalone;
+          if (ua.indexOf("Android") !== -1) {
+            // 56 The corresponding is Android Browser The height of the navigation bar
+            page.style.height = window.innerHeight + 56 + "px";
+          } else if (/iPhone|iPod|iPad/.test(ua)) {
+            // 60 The corresponding is Safari The height of the navigation bar
+            page.style.height =
+              window.innerHeight + (isFullScreen ? 0 : 60) + "px";
+          }
+          setTimeout(scrollTo, 0, 0, 1);
+        },
+        false
+      );
     </script>
-    <script
-      src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
-      integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.js"
-      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-      crossorigin="anonymous"
-    ></script>
   </head>
 
   <body>
