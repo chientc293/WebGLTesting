@@ -191,19 +191,19 @@
       }
       try {
         var buildUrl = "WebGLTesting/Build";
-        // var loaderUrl = buildUrl + "/buildv1.loader.js";
-        var loaderUrl =
-          "https://kr-game-bundles.s3.ap-southeast-1.amazonaws.com/oob/ServerData/StandaloneWindows64/Build/buildv1.loader.js";
+        var loaderUrl = buildUrl + "/buildv1.loader.js";
+        // var loaderUrl =
+        //   "https://kr-game-bundles.s3.ap-southeast-1.amazonaws.com/oob/ServerData/StandaloneWindows64/Build/buildv1.loader.js";
         var config = {
-          // dataUrl: buildUrl + "/buildv1.data",
-          // frameworkUrl: buildUrl + "/buildv1.framework.js",
-          dataUrl:
-            "https://kr-game-bundles.s3.ap-southeast-1.amazonaws.com/oob/ServerData/StandaloneWindows64/Build/buildv1.data",
-          frameworkUrl:
-            "https://kr-game-bundles.s3.ap-southeast-1.amazonaws.com/oob/ServerData/StandaloneWindows64/Build/buildv1.framework.js",
-          // codeUrl: buildUrl + "/buildv1.wasm",
-          codeUrl:
-            "https://kr-game-bundles.s3.ap-southeast-1.amazonaws.com/oob/ServerData/StandaloneWindows64/Build/buildv1.wasm",
+          dataUrl: buildUrl + "/buildv1.data",
+          frameworkUrl: buildUrl + "/buildv1.framework.js",
+          // dataUrl:
+          //   "https://kr-game-bundles.s3.ap-southeast-1.amazonaws.com/oob/ServerData/StandaloneWindows64/Build/buildv1.data",
+          // frameworkUrl:
+          //   "https://kr-game-bundles.s3.ap-southeast-1.amazonaws.com/oob/ServerData/StandaloneWindows64/Build/buildv1.framework.js",
+          codeUrl: buildUrl + "/buildv1.wasm",
+          // codeUrl:
+          //   "https://kr-game-bundles.s3.ap-southeast-1.amazonaws.com/oob/ServerData/StandaloneWindows64/Build/buildv1.wasm",
           streamingAssetsUrl: "StreamingAssets",
           companyName: "DefaultCompany",
           productName: "game",
@@ -358,8 +358,8 @@
         }
       }
 
-      canvas.style.background =
-        "url('" + buildUrl + "/buildv1.jpg') center / cover";
+      // canvas.style.background =
+      //   "url('" + buildUrl + "/buildv1.jpg') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
